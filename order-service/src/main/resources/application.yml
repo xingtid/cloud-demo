@@ -1,11 +1,17 @@
 server:
   port: 8082
 spring:
+  application:
+    name: order-service
   datasource:
     url: jdbc:postgresql://sh-tdcpg-ep-6a7wo2wi.sql.tencentcdb.com:28376/zeal?useSSL=false
     username: root
     password: Hewenxing4316
     driver-class-name: org.postgresql.Driver
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+
 mybatis:
   type-aliases-package: cn.itcast.user.pojo
   configuration:
@@ -15,3 +21,17 @@ logging:
     cn.itcast: debug
   pattern:
     dateformat: MM-dd HH:mm:ss:SSS
+#eureka:
+#  client:
+#    service-url: # eureka server url
+#      defaultZone: http://localhost:10088/eureka/
+#user-service:
+#  ribbon:
+#      # 负载均衡策略
+#    NFLoadBalancerRule: com.netflix.loadbalancer.RandomRule
+#ribbon:
+#  eager-load:
+#    # 开启饥饿加载
+#    enabled: true
+#    clients:
+#      - user-service # 饥饿加载的客户端

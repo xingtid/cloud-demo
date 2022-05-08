@@ -1,11 +1,17 @@
 server:
   port: 8083
 spring:
+  application:
+    name: user-service
   datasource:
     url: jdbc:postgresql://sh-tdcpg-ep-6a7wo2wi.sql.tencentcdb.com:28376/zeal?useSSL=false
     username: root
     password: Hewenxing4316
     driver-class-name: org.postgresql.Driver
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+
 mybatis:
   type-aliases-package: cn.itcast.user.pojo
   configuration:
@@ -15,3 +21,7 @@ logging:
     cn.itcast: debug
   pattern:
     dateformat: MM-dd HH:mm:ss:SSS
+#eureka:
+#  client:
+#    service-url: # eureka server url
+#      defaultZone: http://localhost:10088/eureka/
