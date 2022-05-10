@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: userservice
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      config:
+        server-addr: 81.69.226.40:8848
+        file-extension: yaml
