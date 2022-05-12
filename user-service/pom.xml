@@ -25,6 +25,7 @@
             <artifactId>postgresql</artifactId>
             <scope>runtime</scope>
         </dependency>
+
         <!-- eureka -->
 <!--        <dependency>-->
 <!--            <groupId>org.springframework.cloud</groupId>-->

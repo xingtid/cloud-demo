@@ -12,11 +12,10 @@ spring:
     nacos:
       server-addr: 81.69.226.40:8848
       discovery:
-        cluster-name: shanghai
+#        cluster-name: shanghai
 #        namespace: 778576cd-648f-4512-88d4-177e87f326d0
         # 非临时实例
         ephemeral: false
-
 mybatis:
   type-aliases-package: cn.itcast.user.pojo
   configuration:
@@ -40,4 +39,14 @@ user-service:
 #    # 开启饥饿加载
 #    enabled: true
 #    clients:
+feign:
+#  client:
+#    config:
+#      default:
+#        loggerLevel: FULL
+  httpclient:
+    enadbled: true
+    connection-timeout: 5000
+    max-connections: 20
+
 #      - user-service # 饥饿加载的客户端
