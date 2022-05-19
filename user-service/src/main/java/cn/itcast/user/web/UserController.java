@@ -22,6 +22,7 @@ public class UserController {
 
     @Autowired
     private Properties properties;
+
     /**
      * 路径： /user/110
      *
@@ -29,7 +30,8 @@ public class UserController {
      * @return 用户
      */
     @GetMapping("/{id}")
-    public User queryById(@PathVariable("id") Long id) {
+    public User queryById(@PathVariable("id") Long id, @RequestHeader(value = "X-Request-Id", required = false) String XRequestId) {
+        System.out.println("X-Request-Id:" + XRequestId);
         return userService.queryById(id);
     }
 
