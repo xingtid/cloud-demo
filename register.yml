@@ -1,0 +1,17 @@
+version: "3.0"
+services:
+  registry:
+    image: registry
+    volumes:
+      - ./registry-data:/var/lib/registry
+  ui:
+    image: joxit/docker-registry-ui:static
+    ports:
+      - 8080:80
+    environment:
+      - REGISTRY_TITLE=zeal
+      - REGISTRY_URL=http://registry:5000
+    volumes:
+      - ./config.yml:/etc/docker/registry/config.yml
+    depends_on:
+      - registry
