@@ -1,5 +1,6 @@
 package cn.itcast.order.service;
 
+import cn.itcast.feign.clients.HmClient;
 import cn.itcast.feign.clients.UserClient;
 import cn.itcast.feign.pojo.Order;
 import cn.itcast.feign.pojo.User;
@@ -14,6 +15,8 @@ public class OrderService {
     private OrderMapper orderMapper;
     @Autowired
     private UserClient userClient;
+    @Autowired
+    private HmClient hmClient;
 
     public Order queryOrderById(Long orderId) {
         // 1.查询订单
@@ -23,6 +26,7 @@ public class OrderService {
         // 3.将用户信息设置到订单中
         order.setUser(user);
         // 4.返回
+        hmClient.paymentInfo_TimeOut(233);
         return order;
     }
 //    @Autowired

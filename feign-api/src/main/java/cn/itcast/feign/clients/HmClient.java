@@ -5,8 +5,8 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-@FeignClient(name = "user-service", fallbackFactory = UserClientFallbackFactory.class)
-public interface UserClient {
-    @GetMapping("/user/{id}")
-    User findById(@PathVariable("id") Long id);
+@FeignClient(name = "hystrix-m")
+public interface HmClient {
+    @GetMapping("/payment/hystrix/timeout/{id}")
+    User paymentInfo_TimeOut(@PathVariable("id") Integer id);
 }

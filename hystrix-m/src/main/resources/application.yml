@@ -16,4 +16,4 @@ spring:
         #        cluster-name: shanghai
         #        namespace: 778576cd-648f-4512-88d4-177e87f326d0
         # 非临时实例
-        ephemeral: false
+#        ephemeral: false

@@ -27,6 +27,12 @@ logging:
 #  client:
 #    service-url: # eureka server url
 #      defaultZone: http://localhost:10088/eureka/
-
+feign:
+  httpclient:
+    enabled: true
+    max-connections: 200
+    max-connections-per-route: 50
+  sentinel:
+    enabled: true
 zeal:
   name: zeal
